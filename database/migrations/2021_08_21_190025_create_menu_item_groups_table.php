@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCompaniesTable extends Migration
+class CreateMenuItemGroupsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateCompaniesTable extends Migration
      */
     public function up()
     {
-        Schema::create('companies', function (Blueprint $table) {
+        Schema::create('menu_item_groups', function (Blueprint $table) {
             $table->uuid('id');
+            $table->foreignUuid('menu_id');
+            $table->integer('order')->default(0);
             $table->string('name');
-            $table->string('currency', 3)->default('usd');
-            $table->foreignUuid('owner_id');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateCompaniesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('companies');
+        Schema::dropIfExists('menu_item_groups');
     }
 }

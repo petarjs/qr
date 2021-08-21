@@ -137,6 +137,13 @@
       0 => 'Spatie\\Enum\\Laravel\\EnumServiceProvider',
     ),
   ),
+  'spatie/laravel-model-states' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Spatie\\ModelStates\\ModelStatesServiceProvider',
+    ),
+  ),
   'spatie/laravel-permission' => 
   array (
     'providers' => 

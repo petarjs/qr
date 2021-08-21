@@ -20,6 +20,7 @@ class CompanySeeder extends Seeder
 
         $company = $manager->ownedCompany()->create([
             'name' => 'Fefeterija',
+            'currency' => 'rsd',
         ]);
 
         $company->users()->saveMany([$manager, $operator]);

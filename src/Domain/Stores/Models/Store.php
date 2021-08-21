@@ -1,22 +1,16 @@
 <?php
 
-namespace Domain\Companies\Models;
+namespace Domain\Stores\Models;
 
-use Domain\Menus\Models\Menu;
-use Domain\Stores\Models\Store;
+use Domain\Companies\Models\Company;
 use Domain\Users\Models\User;
 use GoldSpecDigital\LaravelEloquentUUID\Database\Eloquent\Model;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Jetstream\HasProfilePhoto;
-use Spark\Billable;
+
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
 
-class Company extends Model
+class Store extends Model
 {
-    use HasProfilePhoto;
-    use Notifiable;
-    use Billable;
     use LogsActivity;
 
     /**
@@ -49,23 +43,8 @@ class Company extends Model
         return LogOptions::defaults()->logAll();
     }
 
-    public function owner()
+    public function company()
     {
-        return $this->belongsTo(User::class, 'owner_id');
-    }
-
-    public function users()
-    {
-        return $this->hasMany(User::class);
-    }
-
-    public function stores()
-    {
-        return $this->hasMany(Store::class);
-    }
-
-    public function menus()
-    {
-        return $this->hasMany(Menu::class);
+        return $this->belongsTo(Company::class);
     }
 }
