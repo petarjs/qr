@@ -130,4 +130,11 @@
       0 => 'Spatie\\Permission\\PermissionServiceProvider',
     ),
   ),
+  'spatie/laravel-web-tinker' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Spatie\\WebTinker\\WebTinkerServiceProvider',
+    ),
+  ),
 );

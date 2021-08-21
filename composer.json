@@ -16,7 +16,8 @@
         "laravel/telescope": "^4.6",
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.5",
-        "spatie/laravel-permission": "^4.3"
+        "spatie/laravel-permission": "^4.3",
+        "spatie/laravel-web-tinker": "^1.7"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
