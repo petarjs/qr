@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Domain\Roles\Enums\RoleEnum;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
@@ -31,7 +32,7 @@ class RolesAndPermissionsSeeder extends Seeder
         Permission::create(['name' => 'manage menus']);
         Permission::create(['name' => 'manage menu items']);
 
-        Role::create(['name' => 'admin'])
+        Role::create(['name' => RoleEnum::admin()])
             ->givePermissionTo([
                 'assign roles',
                 'assign permissions',
@@ -40,14 +41,14 @@ class RolesAndPermissionsSeeder extends Seeder
                 'manage templates',
             ]);
 
-        Role::create(['name' => 'manager'])
+        Role::create(['name' => RoleEnum::manager()])
             ->givePermissionTo([
                 'manage billing',
                 'manage company',
                 'manage stores',
             ]);
 
-        Role::create(['name' => 'operator'])
+        Role::create(['name' => RoleEnum::operator()])
             ->givePermissionTo([
                 'manage menus',
                 'manage menu items',

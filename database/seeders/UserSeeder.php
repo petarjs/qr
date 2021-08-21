@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Domain\Roles\Enums\RoleEnum;
 use Domain\Users\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -35,8 +36,8 @@ class UserSeeder extends Seeder
             'email_verified_at' => now(),
         ]);
 
-        $admin->assignRole('admin');
-        $manager->assignRole(['manager', 'operator']);
-        $operator->assignRole('operator');
+        $admin->assignRole(RoleEnum::admin()->value);
+        $manager->assignRole([RoleEnum::manager()->value, RoleEnum::operator()->value]);
+        $operator->assignRole(RoleEnum::operator()->value);
     }
 }

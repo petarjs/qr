@@ -7,12 +7,15 @@ use GoldSpecDigital\LaravelEloquentUUID\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Spark\Billable;
+use Spatie\Activitylog\LogOptions;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 class Company extends Model
 {
     use HasProfilePhoto;
     use Notifiable;
     use Billable;
+    use LogsActivity;
 
     /**
      * The attributes that are mass assignable.
@@ -38,6 +41,11 @@ class Company extends Model
     protected $appends = [
 
     ];
+
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()->logAll();
+    }
 
     public function owner()
     {
