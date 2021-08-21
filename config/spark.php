@@ -77,8 +77,8 @@ return [
 
     'billables' => [
 
-        'user' => [
-            'model' => User::class,
+        'company' => [
+            'model' => \Domain\Companies\Models\Company::class,
 
             'trial_days' => 5,
 

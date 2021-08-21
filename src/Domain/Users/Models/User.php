@@ -2,6 +2,7 @@
 
 namespace Domain\Users\Models;
 
+use Domain\Companies\Models\Company;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use GoldSpecDigital\LaravelEloquentUUID\Foundation\Auth\User as Authenticatable;
@@ -19,7 +20,6 @@ class User extends Authenticatable
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
-    use Billable;
     use HasRoles;
 
     /**
@@ -62,4 +62,14 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function ownedCompany()
+    {
+        return $this->hasOne(Company::class, 'owner_id');
+    }
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
 }

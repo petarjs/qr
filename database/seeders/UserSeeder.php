@@ -18,18 +18,21 @@ class UserSeeder extends Seeder
             'name' => 'Petar Admin',
             'email' => 'petar+admin@quantox.com',
             'password' => bcrypt('123123123'),
-        ]);
-
-        $operator = User::create([
-            'name' => 'Petar Operator',
-            'email' => 'petar+operator@quantox.com',
-            'password' => bcrypt('123123123'),
+            'email_verified_at' => now(),
         ]);
 
         $manager = User::create([
             'name' => 'Petar Manager',
             'email' => "petar+manager@quantox.com",
             'password' => bcrypt('123123123'),
+            'email_verified_at' => now(),
+        ]);
+
+        $operator = User::create([
+            'name' => 'Petar Operator',
+            'email' => 'petar+operator@quantox.com',
+            'password' => bcrypt('123123123'),
+            'email_verified_at' => now(),
         ]);
 
         $admin->assignRole('admin');
