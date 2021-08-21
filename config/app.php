@@ -169,14 +169,14 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\SparkServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
-        App\Providers\FortifyServiceProvider::class,
-        App\Providers\JetstreamServiceProvider::class,
+        App\Common\Providers\AppServiceProvider::class,
+        App\Common\Providers\AuthServiceProvider::class,
+        // App\Common\Providers\BroadcastServiceProvider::class,
+        App\Common\Providers\EventServiceProvider::class,
+        App\Common\Providers\SparkServiceProvider::class,
+        App\Common\Providers\RouteServiceProvider::class,
+        App\Common\Providers\FortifyServiceProvider::class,
+        App\Common\Providers\JetstreamServiceProvider::class,
 
     ],
 
