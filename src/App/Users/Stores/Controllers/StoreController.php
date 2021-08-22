@@ -2,7 +2,6 @@
 
 namespace App\Users\Stores\Controllers;
 
-use App\Users\Stores\Queries\StoresIndexQuery;
 use App\Users\Stores\Requests\SaveStoreRequest;
 use App\Users\Stores\Requests\ViewStoreRequest;
 use App\Users\Stores\ViewModels\StoreCreateViewModel;
@@ -23,8 +22,8 @@ class StoreController
 
     public function __construct(
         FindCompanyByUserAction $findCompanyByUserAction,
-        CreateStoreAction $createStoreAction,
-        UpdateStoreAction $updateStoreAction,
+        CreateStoreAction       $createStoreAction,
+        UpdateStoreAction       $updateStoreAction,
     )
     {
         $this->findCompanyByUserAction = $findCompanyByUserAction;
@@ -34,8 +33,7 @@ class StoreController
 
     public function index(Request $request)
     {
-        $query = new StoresIndexQuery($request);
-        return (new StoreIndexViewModel($query))->view('users.stores.index');
+        return (new StoreIndexViewModel($request))->view('users.stores.index');
     }
 
     public function createOrEdit(ViewStoreRequest $request, Store $store)

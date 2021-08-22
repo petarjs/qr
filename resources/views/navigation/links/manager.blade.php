@@ -7,7 +7,8 @@
         {{ __('Stores') }}
     </x-jet-nav-link>
 
-    <x-jet-nav-link href="{{ route('dashboard') }}" :active="false">
+    <x-jet-nav-link href="{{ route('users.company-users.index') }}"
+                    :active="request()->routeIs('users.company-users.index')">
         {{ __('Users') }}
     </x-jet-nav-link>
 @endsection
@@ -22,8 +23,8 @@
         {{ __('Stores') }}
     </x-jet-responsive-nav-link>
 
-    <x-jet-responsive-nav-link href="{{ route('dashboard') }}"
-                               :active="false">
+    <x-jet-responsive-nav-link href="{{ route('users.company-users.index') }}"
+                               :active="request()->routeIs('users.company-users.index')">
         {{ __('Users') }}
     </x-jet-responsive-nav-link>
 @endsection

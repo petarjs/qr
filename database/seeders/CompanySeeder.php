@@ -24,5 +24,15 @@ class CompanySeeder extends Seeder
         ]);
 
         $company->users()->saveMany([$manager, $operator]);
+
+        $company->stores()->create([
+            'name' => 'Fef Zvezdara',
+            'address' => 'Krfska 123',
+        ]);
+
+        $company->stores()->create([
+            'name' => 'Fef Centar',
+            'address' => 'Makedonska 123',
+        ]);
     }
 }

@@ -27,6 +27,7 @@ class RolesAndPermissionsSeeder extends Seeder
 
         Permission::create(['name' => 'manage billing']);
         Permission::create(['name' => 'manage company']);
+        Permission::create(['name' => 'manage company users']);
         Permission::create(['name' => 'view stores']);
         Permission::create(['name' => 'manage stores']);
 
@@ -46,7 +47,11 @@ class RolesAndPermissionsSeeder extends Seeder
             ->givePermissionTo([
                 'manage billing',
                 'manage company',
+                'manage company users',
                 'manage stores',
+                'view stores',
+                'manage menus',
+                'manage menu items',
             ]);
 
         Role::create(['name' => RoleEnum::operator()])

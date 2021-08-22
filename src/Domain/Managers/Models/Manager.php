@@ -19,6 +19,6 @@ class Manager extends User
     public function newQuery($excludeDeleted = true)
     {
         return parent::newQuery($excludeDeleted)
-            ->role(RoleEnum::manager());
+            ->role(RoleEnum::manager()->value);
     }
 }

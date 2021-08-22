@@ -37,7 +37,7 @@ class UserSeeder extends Seeder
         ]);
 
         $admin->assignRole(RoleEnum::admin()->value);
-        $manager->assignRole([RoleEnum::manager()->value, RoleEnum::operator()->value]);
+        $manager->assignRole(RoleEnum::manager()->value);
         $operator->assignRole(RoleEnum::operator()->value);
     }
 }

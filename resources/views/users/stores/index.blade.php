@@ -1,8 +1,16 @@
 <x-layouts.app>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Stores') }}
-        </h2>
+        <div class="flex justify-between items-center">
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                {{$company->name}} {{ __('Stores') }}
+            </h2>
+
+            @can('manage stores')
+                <x-button as="a" :href="route('users.stores.create')" icon="plus">
+                    New store
+                </x-button>
+            @endcan
+        </div>
     </x-slot>
 
     <div class="py-12">

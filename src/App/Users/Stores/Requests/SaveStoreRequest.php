@@ -2,6 +2,7 @@
 
 namespace App\Users\Stores\Requests;
 
+use Domain\Stores\Models\Store;
 use Illuminate\Foundation\Http\FormRequest;
 
 class SaveStoreRequest extends FormRequest
@@ -13,13 +14,11 @@ class SaveStoreRequest extends FormRequest
      */
     public function authorize()
     {
-        $user = $this->user();
-
-        if ($this->store && $this->store->company_id !== $user->company->id) {
-            return false;
+        if ($this->store->id == null) {
+            return $this->user()->can('create', Store::class);
+        } else {
+            return $this->user()->can('update', $this->store);
         }
-
-        return $user->can('manage stores');
     }
 
     /**
