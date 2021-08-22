@@ -1,5 +1,6 @@
 <?php
 
+use App\Users\Companies\Controllers\CompanyController;
 use App\Users\CompanyUsers\Controllers\CompanyUserController;
 use App\Users\Stores\Controllers\StoreController;
 use Illuminate\Support\Facades\Route;
@@ -54,4 +55,11 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         ::get('/company/users', [CompanyUserController::class, 'index'])
         ->middleware('can:manage company users')
         ->name('users.company-users.index');
+
+    /**
+     * Company
+     */
+    Route
+        ::get('/company', [CompanyController::class, 'show'])
+        ->name('users.companies.show');
 });
