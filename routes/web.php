@@ -38,6 +38,6 @@ Route
     ->name('users.stores.edit');
 
 Route
-    ::post('/stores/{store}', [StoreController::class, 'save'])
+    ::post('/stores/{store?}', [StoreController::class, 'save'])
     ->middleware('can:manage stores')
     ->name('users.stores.save');
