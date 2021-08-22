@@ -43,15 +43,18 @@
     39 => 'Spatie\\Enum\\Laravel\\EnumServiceProvider',
     40 => 'Spatie\\ModelStates\\ModelStatesServiceProvider',
     41 => 'Spatie\\Permission\\PermissionServiceProvider',
-    42 => 'Spatie\\WebTinker\\WebTinkerServiceProvider',
-    43 => 'App\\Common\\Providers\\TelescopeServiceProvider',
-    44 => 'App\\Common\\Providers\\AppServiceProvider',
-    45 => 'App\\Common\\Providers\\AuthServiceProvider',
-    46 => 'App\\Common\\Providers\\EventServiceProvider',
-    47 => 'App\\Common\\Providers\\SparkServiceProvider',
-    48 => 'App\\Common\\Providers\\RouteServiceProvider',
-    49 => 'App\\Common\\Providers\\FortifyServiceProvider',
-    50 => 'App\\Common\\Providers\\JetstreamServiceProvider',
+    42 => 'Spatie\\QueryBuilder\\QueryBuilderServiceProvider',
+    43 => 'Spatie\\QueueableAction\\QueueableActionServiceProvider',
+    44 => 'Spatie\\ViewModels\\Providers\\ViewModelsServiceProvider',
+    45 => 'Spatie\\WebTinker\\WebTinkerServiceProvider',
+    46 => 'App\\Common\\Providers\\TelescopeServiceProvider',
+    47 => 'App\\Common\\Providers\\AppServiceProvider',
+    48 => 'App\\Common\\Providers\\AuthServiceProvider',
+    49 => 'App\\Common\\Providers\\EventServiceProvider',
+    50 => 'App\\Common\\Providers\\SparkServiceProvider',
+    51 => 'App\\Common\\Providers\\RouteServiceProvider',
+    52 => 'App\\Common\\Providers\\FortifyServiceProvider',
+    53 => 'App\\Common\\Providers\\JetstreamServiceProvider',
   ),
   'eager' => 
   array (
@@ -83,15 +86,17 @@
     25 => 'Spatie\\Enum\\Laravel\\EnumServiceProvider',
     26 => 'Spatie\\ModelStates\\ModelStatesServiceProvider',
     27 => 'Spatie\\Permission\\PermissionServiceProvider',
-    28 => 'Spatie\\WebTinker\\WebTinkerServiceProvider',
-    29 => 'App\\Common\\Providers\\TelescopeServiceProvider',
-    30 => 'App\\Common\\Providers\\AppServiceProvider',
-    31 => 'App\\Common\\Providers\\AuthServiceProvider',
-    32 => 'App\\Common\\Providers\\EventServiceProvider',
-    33 => 'App\\Common\\Providers\\SparkServiceProvider',
-    34 => 'App\\Common\\Providers\\RouteServiceProvider',
-    35 => 'App\\Common\\Providers\\FortifyServiceProvider',
-    36 => 'App\\Common\\Providers\\JetstreamServiceProvider',
+    28 => 'Spatie\\QueryBuilder\\QueryBuilderServiceProvider',
+    29 => 'Spatie\\ViewModels\\Providers\\ViewModelsServiceProvider',
+    30 => 'Spatie\\WebTinker\\WebTinkerServiceProvider',
+    31 => 'App\\Common\\Providers\\TelescopeServiceProvider',
+    32 => 'App\\Common\\Providers\\AppServiceProvider',
+    33 => 'App\\Common\\Providers\\AuthServiceProvider',
+    34 => 'App\\Common\\Providers\\EventServiceProvider',
+    35 => 'App\\Common\\Providers\\SparkServiceProvider',
+    36 => 'App\\Common\\Providers\\RouteServiceProvider',
+    37 => 'App\\Common\\Providers\\FortifyServiceProvider',
+    38 => 'App\\Common\\Providers\\JetstreamServiceProvider',
   ),
   'deferred' => 
   array (
@@ -217,6 +222,7 @@
     'Laravel\\Sail\\Console\\InstallCommand' => 'Laravel\\Sail\\SailServiceProvider',
     'Laravel\\Sail\\Console\\PublishCommand' => 'Laravel\\Sail\\SailServiceProvider',
     'command.tinker' => 'Laravel\\Tinker\\TinkerServiceProvider',
+    'Spatie\\QueueableAction\\ActionMakeCommand' => 'Spatie\\QueueableAction\\QueueableActionServiceProvider',
   ),
   'when' => 
   array (
@@ -260,6 +266,9 @@
     array (
     ),
     'Laravel\\Tinker\\TinkerServiceProvider' => 
+    array (
+    ),
+    'Spatie\\QueueableAction\\QueueableActionServiceProvider' => 
     array (
     ),
   ),

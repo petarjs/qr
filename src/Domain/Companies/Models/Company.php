@@ -2,6 +2,7 @@
 
 namespace Domain\Companies\Models;
 
+use Domain\Companies\QueryBuilders\CompanyQueryBuilder;
 use Domain\Menus\Models\Menu;
 use Domain\Stores\Models\Store;
 use Domain\Users\Models\User;
@@ -43,6 +44,11 @@ class Company extends Model
     protected $appends = [
 
     ];
+
+    public function newEloquentBuilder($query): CompanyQueryBuilder
+    {
+        return new CompanyQueryBuilder($query);
+    }
 
     public function getActivitylogOptions(): LogOptions
     {

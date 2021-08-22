@@ -151,6 +151,27 @@
       0 => 'Spatie\\Permission\\PermissionServiceProvider',
     ),
   ),
+  'spatie/laravel-query-builder' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Spatie\\QueryBuilder\\QueryBuilderServiceProvider',
+    ),
+  ),
+  'spatie/laravel-queueable-action' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Spatie\\QueueableAction\\QueueableActionServiceProvider',
+    ),
+  ),
+  'spatie/laravel-view-models' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Spatie\\ViewModels\\Providers\\ViewModelsServiceProvider',
+    ),
+  ),
   'spatie/laravel-web-tinker' => 
   array (
     'providers' => 

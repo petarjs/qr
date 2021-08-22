@@ -16,6 +16,7 @@ class CreateStoresTable extends Migration
         Schema::create('stores', function (Blueprint $table) {
             $table->uuid('id');
             $table->string('name');
+            $table->string('address');
             $table->foreignUuid('company_id');
             $table->timestamps();
         });
