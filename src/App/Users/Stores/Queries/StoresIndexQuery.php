@@ -10,7 +10,7 @@ class StoresIndexQuery extends QueryBuilder
 {
     public function __construct(Request $request)
     {
-        $query = Store::query();
+        $query = Store::forUser($request->user());
 
         parent::__construct($query, $request);
 

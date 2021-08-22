@@ -3,6 +3,7 @@
 namespace Domain\Stores\Models;
 
 use Domain\Companies\Models\Company;
+use Domain\Stores\QueryBuilders\StoreQueryBuilder;
 use Domain\Users\Models\User;
 use GoldSpecDigital\LaravelEloquentUUID\Database\Eloquent\Model;
 
@@ -37,6 +38,11 @@ class Store extends Model
     protected $appends = [
 
     ];
+
+    public function newEloquentBuilder($query): StoreQueryBuilder
+    {
+        return new StoreQueryBuilder($query);
+    }
 
     public function getActivitylogOptions(): LogOptions
     {

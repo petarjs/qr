@@ -4,7 +4,7 @@ namespace App\Users\Stores\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SaveStoreRequest extends FormRequest
+class ViewStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -19,7 +19,7 @@ class SaveStoreRequest extends FormRequest
             return false;
         }
 
-        return $user->can('manage stores');
+        return $user->can('view stores');
     }
 
     /**
@@ -30,8 +30,7 @@ class SaveStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'address' => 'required',
+
         ];
     }
 }

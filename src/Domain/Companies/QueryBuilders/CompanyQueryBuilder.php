@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Builder;
 
 class CompanyQueryBuilder extends Builder
 {
-    public function forOwner(User $user): ?Company
+    public function forOwner(User $user)
     {
         return $this->whereOwnerId($user->id);
     }
