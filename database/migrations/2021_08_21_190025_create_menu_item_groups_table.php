@@ -18,6 +18,8 @@ class CreateMenuItemGroupsTable extends Migration
             $table->foreignUuid('menu_id');
             $table->integer('order')->default(0);
             $table->string('name');
+            $table->text('description')->nullable();
+            $table->string('slug');
             $table->timestamps();
         });
     }

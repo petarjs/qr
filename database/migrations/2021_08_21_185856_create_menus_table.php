@@ -17,6 +17,7 @@ class CreateMenusTable extends Migration
             $table->uuid('id');
             $table->string('name');
             $table->foreignUuid('company_id');
+            $table->string('slug');
             $table->timestamps();
         });
     }

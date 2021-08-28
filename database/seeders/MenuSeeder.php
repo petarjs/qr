@@ -24,21 +24,25 @@ class MenuSeeder extends Seeder
 
         $menuItemGroup1 = $menu->menuItemGroups()->create([
             'name' => 'Best Coffees in Town',
+            'description' => 'Try our special coffees, perfect for the mornings',
             'order' => 1,
         ]);
 
         $menuItemGroup2 = $menu->menuItemGroups()->create([
             'name' => 'Soft Drinks',
+            'description' => 'Tasty fizzy goodness to lift your spirit',
             'order' => 2,
         ]);
 
         $menuItemGroup1->menuItems()->create([
             'name' => 'Columbia Aeropress',
+            'description' => 'Subtle notes of caramel and strong body',
             'order' => 1,
             'price' => 490,
         ]);
         $menuItemGroup1->menuItems()->create([
             'name' => 'Costa Rica Drip',
+            'description' => 'Floral notes - Tangerine, Bergamot, Green Apple acidity ',
             'order' => 2,
             'price' => 430,
         ]);

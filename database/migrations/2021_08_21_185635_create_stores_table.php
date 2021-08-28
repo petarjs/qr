@@ -17,6 +17,7 @@ class CreateStoresTable extends Migration
             $table->uuid('id');
             $table->string('name');
             $table->string('address');
+            $table->string('slug');
             $table->foreignUuid('company_id');
             $table->timestamps();
         });

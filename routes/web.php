@@ -2,6 +2,7 @@
 
 use App\Users\Companies\Controllers\CompanyController;
 use App\Users\CompanyUsers\Controllers\CompanyUserController;
+use App\Users\Menus\Controllers\MenuController;
 use App\Users\Stores\Controllers\StoreController;
 use Illuminate\Support\Facades\Route;
 
@@ -62,4 +63,14 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route
         ::get('/company', [CompanyController::class, 'show'])
         ->name('users.companies.show');
+
+    /**
+     * Menus
+     */
+    Route
+        ::get('/menus', [MenuController::class, 'index'])
+        ->name('users.menus.index');
+    Route
+        ::get('/menus/{menu}', [MenuController::class, 'show'])
+        ->name('users.menus.show');
 });

@@ -2,8 +2,14 @@
     <x-slot name="header">
         <div class="flex justify-between items-center">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{$company->name}}
+                {{$company->name}} {{ __('Menus') }}
             </h2>
+
+            @can('manage menus')
+                <x-button as="a" href="#" icon="plus">
+                    {{ __('New menu') }}
+                </x-button>
+            @endcan
         </div>
     </x-slot>
 
@@ -13,7 +19,7 @@
                 <div class="flex-1 flex items-stretch overflow-hidden">
                     <main class="flex-1 overflow-y-auto p-8">
 
-                        {{$company->name}}
+                        <x-menus.list :menus="$menus"/>
 
                     </main>
                 </div>

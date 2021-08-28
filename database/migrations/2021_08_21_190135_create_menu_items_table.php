@@ -19,7 +19,8 @@ class CreateMenuItemsTable extends Migration
             $table->integer('order');
             $table->float('price');
             $table->string('name');
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
+            $table->string('slug');
             $table->timestamps();
         });
     }

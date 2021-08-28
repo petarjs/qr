@@ -9,10 +9,13 @@ use GoldSpecDigital\LaravelEloquentUUID\Database\Eloquent\Model;
 
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
 
 class Store extends Model
 {
     use LogsActivity;
+    use HasSlug;
 
     /**
      * The attributes that are mass assignable.
@@ -47,6 +50,18 @@ class Store extends Model
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()->logAll();
+    }
+
+    public function getSlugOptions() : SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('name')
+            ->saveSlugsTo('slug');
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 
     public function company()

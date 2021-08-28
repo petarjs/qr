@@ -8,10 +8,13 @@ use GoldSpecDigital\LaravelEloquentUUID\Database\Eloquent\Model;
 
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
 
 class MenuItem extends Model
 {
     use LogsActivity;
+    use HasSlug;
 
     /**
      * The attributes that are mass assignable.
@@ -43,7 +46,19 @@ class MenuItem extends Model
         return LogOptions::defaults()->logAll();
     }
 
-    public function menu()
+    public function getSlugOptions() : SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('name')
+            ->saveSlugsTo('slug');
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    public function menuItemGroup()
     {
         return $this->belongsTo(MenuItemGroup::class);
     }
