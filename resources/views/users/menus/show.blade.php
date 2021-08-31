@@ -15,6 +15,8 @@
 
                         <x-input name="name" label="Menu Name" :value="$menu->name"/>
 
+                        <img src="{{$menu->qrCode->getFirstMediaUrl('qr')}}"/>
+
                         <h2 class="text-xl mt-8 mb-3 font-semibold">Menu</h2>
                         <x-accordion>
                             @forelse($menu->menuItemGroups as $menuItemGroup)

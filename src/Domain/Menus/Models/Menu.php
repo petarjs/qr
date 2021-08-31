@@ -3,8 +3,8 @@
 namespace Domain\Menus\Models;
 
 use Domain\Companies\Models\Company;
+use Domain\QRCodes\Models\QRCode;
 use Domain\Menus\QueryBuilders\MenuQueryBuilder;
-use Domain\Users\Models\User;
 use GoldSpecDigital\LaravelEloquentUUID\Database\Eloquent\Model;
 
 use Spatie\Activitylog\LogOptions;
@@ -72,5 +72,10 @@ class Menu extends Model
     public function menuItemGroups()
     {
         return $this->hasMany(MenuItemGroup::class)->orderBy('order');
+    }
+
+    public function qrCode()
+    {
+        return $this->belongsTo(QRCode::class);
     }
 }

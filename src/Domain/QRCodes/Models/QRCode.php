@@ -1,21 +1,20 @@
 <?php
 
-namespace Domain\Menus\Models;
+namespace Domain\QRCodes\Models;
 
+use Domain\QRCodes\QueryBuilders\QRCodeQueryBuilder;
 use GoldSpecDigital\LaravelEloquentUUID\Database\Eloquent\Model;
-
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
-use Spatie\Sluggable\HasSlug;
-use Spatie\Sluggable\SlugOptions;
 
-class MenuItem extends Model implements HasMedia
+class QRCode extends Model implements HasMedia
 {
     use LogsActivity;
-    use HasSlug;
     use InteractsWithMedia;
+
+    protected $table = 'qr_codes';
 
     /**
      * The attributes that are mass assignable.
@@ -47,20 +46,15 @@ class MenuItem extends Model implements HasMedia
         return LogOptions::defaults()->logAll();
     }
 
-    public function getSlugOptions() : SlugOptions
+    public function newEloquentBuilder($query): QRCodeQueryBuilder
     {
-        return SlugOptions::create()
-            ->generateSlugsFrom('name')
-            ->saveSlugsTo('slug');
+        return new QRCodeQueryBuilder($query);
     }
 
-    public function getRouteKeyName()
+    public function registerMediaCollections(): void
     {
-        return 'slug';
-    }
-
-    public function menuItemGroup()
-    {
-        return $this->belongsTo(MenuItemGroup::class);
+        $this
+            ->addMediaCollection('qr')
+            ->singleFile();
     }
 }

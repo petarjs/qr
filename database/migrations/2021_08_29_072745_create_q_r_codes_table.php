@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMenusTable extends Migration
+class CreateQRCodesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateMenusTable extends Migration
      */
     public function up()
     {
-        Schema::create('menus', function (Blueprint $table) {
+        Schema::create('qr_codes', function (Blueprint $table) {
             $table->uuid('id');
-            $table->string('name');
-            $table->foreignUuid('company_id');
-            $table->foreignUuid('qr_code_id')->nullable();
-            $table->string('slug');
+            $table->text('text');
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ class CreateMenusTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('menus');
+        Schema::dropIfExists('qr_codes');
     }
 }

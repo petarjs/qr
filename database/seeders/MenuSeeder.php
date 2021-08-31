@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use Domain\Companies\Models\Company;
+use Domain\Menus\Actions\CreateMenuAction;
+use Domain\Menus\DataTransferObjects\MenuData;
 use Domain\Users\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -15,12 +17,14 @@ class MenuSeeder extends Seeder
      */
     public function run()
     {
+        $createMenuAction = app(CreateMenuAction::class);
         $manager = User::whereEmail('petar+manager@quantox.com')->first();
-        $company = $manager->company;
 
-        $menu = $company->menus()->create([
+        $menuData = new MenuData([
             'name' => 'Drinks',
         ]);
+
+        $menu = $createMenuAction->execute($manager, $menuData);
 
         $menuItemGroup1 = $menu->menuItemGroups()->create([
             'name' => 'Best Coffees in Town',

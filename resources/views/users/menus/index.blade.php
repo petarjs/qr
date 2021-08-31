@@ -6,7 +6,7 @@
             </h2>
 
             @can('manage menus')
-                <x-button as="a" href="#" icon="plus">
+                <x-button as="a" href="{{route('users.menus.create')}}" icon="plus">
                     {{ __('New menu') }}
                 </x-button>
             @endcan

@@ -3,6 +3,7 @@
 use App\Users\Companies\Controllers\CompanyController;
 use App\Users\CompanyUsers\Controllers\CompanyUserController;
 use App\Users\Menus\Controllers\MenuController;
+use App\Users\Menus\Controllers\PublicMenuController;
 use App\Users\Stores\Controllers\StoreController;
 use Illuminate\Support\Facades\Route;
 
@@ -71,6 +72,25 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         ::get('/menus', [MenuController::class, 'index'])
         ->name('users.menus.index');
     Route
-        ::get('/menus/{menu}', [MenuController::class, 'show'])
+        ::get('/menus/{menu}/details', [MenuController::class, 'show'])
         ->name('users.menus.show');
+    Route
+        ::get('/menus/new', [MenuController::class, 'createOrEdit'])
+        ->middleware('can:manage menus')
+        ->name('users.menus.create');
+    Route
+        ::get('/menus/{menu}', [MenuController::class, 'createOrEdit'])
+        ->middleware('can:manage menus')
+        ->name('users.menus.edit');
+    Route
+        ::post('/menus/{menu?}', [MenuController::class, 'save'])
+        ->middleware('can:manage menus')
+        ->name('users.menus.save');
 });
+
+/**
+ * Public Menus
+ */
+Route
+    ::get('/m/{company}/{menu}', [PublicMenuController::class, 'show'])
+    ->name('guests.menus.show');

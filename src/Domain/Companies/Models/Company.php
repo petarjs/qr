@@ -12,6 +12,8 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Spark\Billable;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
 
 class Company extends Model
 {
@@ -19,6 +21,7 @@ class Company extends Model
     use Notifiable;
     use Billable;
     use LogsActivity;
+    use HasSlug;
 
     /**
      * The attributes that are mass assignable.
@@ -53,6 +56,18 @@ class Company extends Model
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()->logAll();
+    }
+
+    public function getSlugOptions() : SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('name')
+            ->saveSlugsTo('slug');
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 
     public function owner()
