@@ -64,6 +64,14 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route
         ::get('/company', [CompanyController::class, 'show'])
         ->name('users.companies.show');
+    Route
+        ::get('/company/edit', [CompanyController::class, 'edit'])
+        ->middleware('can:manage company')
+        ->name('users.companies.edit');
+    Route
+        ::post('/company/edit', [CompanyController::class, 'update'])
+        ->middleware('can:manage company')
+        ->name('users.companies.update');
 
     /**
      * Menus

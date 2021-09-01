@@ -4,6 +4,10 @@
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 {{$company->name}}
             </h2>
+
+            @can('manage company')
+                <x-button as="a" href="{{route('users.companies.edit')}}">Edit</x-button>
+            @endcan
         </div>
     </x-slot>
 

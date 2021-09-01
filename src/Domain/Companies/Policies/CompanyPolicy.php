@@ -19,6 +19,11 @@ class CompanyPolicy
 
     public function view(User $user, Company $company)
     {
+        return $user->company->id === $company->id;
+    }
+
+    public function edit(User $user, Company $company)
+    {
         return $user->can('manage company')
             && $user->company->id === $company->id;
     }
