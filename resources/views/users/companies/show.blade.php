@@ -19,6 +19,10 @@
 
                         {{$company->name}}
 
+                        <div class="max-w-sm">
+                            {{$company->getFirstMedia('logo')}}
+                        </div>
+
                     </main>
                 </div>
             </div>

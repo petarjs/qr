@@ -23,7 +23,7 @@
                             <x-input name="currency" label="Currency" :value="$company->currency"/>
 
                             <div class="flex">
-                                <x-input name="logo" label="Logo" type="file" value=""/>
+                                <x-input name="logo" label="Logo" type="file"/>
 
                                 <div class="max-w-sm">
                                     {{$company->getFirstMedia('logo')}}

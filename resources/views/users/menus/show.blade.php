@@ -4,6 +4,8 @@
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 {{$menu->company->name}} {{ __('Menu') }} {{$menu->name}}
             </h2>
+
+            <x-button as="a" target="_blank" href="{{$menuPublicUrl}}">Open</x-button>
         </div>
     </x-slot>
 

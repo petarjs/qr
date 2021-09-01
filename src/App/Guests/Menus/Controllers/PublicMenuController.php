@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Users\Menus\Controllers;
+namespace App\Guests\Menus\Controllers;
 
+use App\Guests\Menus\ViewModels\PublicMenuViewModel;
 use Domain\Companies\Models\Company;
 use Domain\Menus\Models\Menu;
 use Domain\Stores\Actions\SaveStoreAction;
-use Domain\Stores\Models\Store;
 use Illuminate\Http\Request;
 
 class PublicMenuController
@@ -20,7 +20,7 @@ class PublicMenuController
 
     public function show(Request $request, Company $company, Menu $menu)
     {
-        return "menu for {$company->name} {$menu->name}";
+        return (new PublicMenuViewModel($company, $menu))->view('guests.menus.show');
     }
 
 

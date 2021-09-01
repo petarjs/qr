@@ -1125,6 +1125,10 @@ select {
 	margin-left: auto;
 	margin-right: auto;
 }
+.my-12 {
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+}
 .ml-3 {
 	margin-left: 0.75rem;
 }
@@ -1221,11 +1225,11 @@ select {
 .-mt-px {
 	margin-top: -1px;
 }
+.mb-2 {
+	margin-bottom: 0.5rem;
+}
 .block {
 	display: block;
-}
-.inline-block {
-	display: inline-block;
 }
 .flex {
 	display: flex;
@@ -1326,17 +1330,11 @@ select {
 .max-w-xl {
 	max-width: 36rem;
 }
-.max-w-6xl {
-	max-width: 72rem;
-}
-.max-w-md {
-	max-width: 28rem;
-}
 .max-w-sm {
 	max-width: 24rem;
 }
-.max-w-\[200px\] {
-	max-width: 200px;
+.max-w-6xl {
+	max-width: 72rem;
 }
 .flex-1 {
 	flex: 1 1 0%;
@@ -2208,10 +2206,6 @@ select {
 .focus\:ring-yellow-400:focus {
 	--tw-ring-opacity: 1;
 	--tw-ring-color: rgba(251, 191, 36, var(--tw-ring-opacity));
-}
-.focus\:ring-indigo-500:focus {
-	--tw-ring-opacity: 1;
-	--tw-ring-color: rgba(99, 102, 241, var(--tw-ring-opacity));
 }
 .focus\:ring-opacity-50:focus {
 	--tw-ring-opacity: 0.5;

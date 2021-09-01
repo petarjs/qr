@@ -1,9 +1,9 @@
 <?php
 
+use App\Guests\Menus\Controllers\PublicMenuController;
 use App\Users\Companies\Controllers\CompanyController;
 use App\Users\CompanyUsers\Controllers\CompanyUserController;
 use App\Users\Menus\Controllers\MenuController;
-use App\Users\Menus\Controllers\PublicMenuController;
 use App\Users\Stores\Controllers\StoreController;
 use Illuminate\Support\Facades\Route;
 
